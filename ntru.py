@@ -142,3 +142,12 @@ r
 p, q, f, f_p, f_q, g, h = generate_parameters(range(N, N+1), range(3, 4), range(9000012, 10000000))
 e = (((r*h).trunc(q)+m).trunc(q) % Poly(x**N-1,x)).trunc(q)
 e
+
+### Decrypt
+# compute a=f*e
+a = ((f * e) % Poly(x**N-1,x)).trunc(q)
+a
+b = a.trunc(p)
+b
+c = ((f_p * b)% Poly(x**N-1,x)).trunc(p)
+c
