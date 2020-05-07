@@ -125,3 +125,10 @@ def generate_parameters(N_range=range(250, 2500), p_range=range(250, 2500), q_ra
         except:
             pass
     raise Exception("invertible f not found")
+
+### Generate message
+# enforce r must be small
+m = next(generate_polynomial(N, 5, 2))
+m
+r = next(generate_polynomial(N//16, 2, 1))
+r
