@@ -132,3 +132,13 @@ m = next(generate_polynomial(N, 5, 2))
 m
 r = next(generate_polynomial(N//16, 2, 1))
 r
+
+### Encrypt
+# compute e=r*h+m mod q
+# create multiply crt?? Applies to encrypt decrypt
+# -1 to 1 range polynomial does good job of making efficient. Only useful in special case where each factor at integer bound already.
+# IEEE STANDARD?
+
+p, q, f, f_p, f_q, g, h = generate_parameters(range(N, N+1), range(3, 4), range(9000012, 10000000))
+e = (((r*h).trunc(q)+m).trunc(q) % Poly(x**N-1,x)).trunc(q)
+e
